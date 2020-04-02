@@ -2,4 +2,6 @@ og_code
 MATLAB
 ._*
 *.m~
+__pycache__/*
+*.pyc
 

@@ -8,7 +8,7 @@ object_dir = 'objects_training/';
 
 %object_dir = fullfile('E:\','objects_training',filesep);
 Dr0        = 5;            % turbulence strength D/r0 =5 (low) /D/r0 = 15 (medium) / D/r0=21 (strong)
-n_poses    = 1;             % how many random or specified poses 
+n_poses    = 100;             % how many random or specified poses 
 dsf        = 4;             % downsample factor (controls image grid size)
 fov        = 0.5;           % field of view
 
@@ -27,7 +27,7 @@ for ss=1:length(adir)
         name = strrep(name, "._", "");
         stl_fname   = join([ object_dir filesep name ext ], '');
         
-       [g, v_az, v_el]   = gesn_object_poses(stl_fname, n_poses, dsf);  % generate random poses 
+       [g, v_az, v_el]   = gen_object_poses(stl_fname, n_poses, dsf);  % generate random poses 
 %        [g, ~, ~]  = gen_object_poses(stl_fname, n_poses, dsf, v_az, v_el);  % generate specific poses 
         g2   = scale_fov(g, 0.5);           % change the FOV - make object smaller<1 /bigger >1
         gp  = blur_object_poses(g2, Dr0);       % Specify turbulence strength via D/r0 value
