@@ -1,0 +1,27 @@
+{
+    "name": "lucky-fog-1",
+    "heartbeatAt": "2020-04-16T19:26:20.069547",
+    "executable": "/usr/bin/python3",
+    "args": [
+        "-f",
+        "/home/jupyter/.local/share/jupyter/runtime/kernel-6f09aa59-daf0-49c4-8719-dac5ad3f0332.json"
+    ],
+    "username": "jupyter",
+    "program": "<python with no main file>",
+    "python": "3.5.3",
+    "email": "google-dl-platform@googlegroups.com",
+    "host": "tensorflow-for-ssa",
+    "project": "testgcpvm",
+    "cuda": "10.1.243",
+    "state": "running",
+    "root": "/home/jupyter/SSA Project",
+    "git": {
+        "commit": "58dfdde77263d9771986cc5fa16019976bc4dd6c",
+        "remote": "git@github.com:JayDosunmu/satellite-model-and-orientation.git"
+    },
+    "mode": "run",
+    "cpu_count": 8,
+    "startedAt": "2020-04-16T19:16:43.543965",
+    "os": "Linux-4.9.0-11-amd64-x86_64-with-debian-9.11",
+    "jobType": null
+}
