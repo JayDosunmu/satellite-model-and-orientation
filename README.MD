@@ -2,12 +2,12 @@
 
 ### Summary
 
-### Generation
+### Synthetic Dataset Generation
 
-#### Bluring 
+### Komlogrov Bluring 
 
 ### Previous Approaches
 
-### ResNet
+### Deep Transfer Learning
 
 ## Usage?
