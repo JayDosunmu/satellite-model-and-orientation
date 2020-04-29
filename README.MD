@@ -1,4 +1,4 @@
-# Advanced Deep Learning Techniques for Addressing Big Data in Space Situational Awareness
+# Implicit Convolutional Denoising for SSA
 
 ### Summary
 
