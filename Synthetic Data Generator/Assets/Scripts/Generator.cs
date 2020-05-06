@@ -67,6 +67,8 @@ public class Generator : MonoBehaviour
 
         _camera = GetComponent<Camera>();
 
+         _sunTransform = GameObject.Find("Sun").transform;
+
         // Setup the observatory
         SetupTextures(resWidth, resHeight);
 
@@ -148,26 +150,13 @@ public class Generator : MonoBehaviour
     }
 
 
-    private static string ScreenShotName(int width, int height, int iter)
-    {
-        return string.Format(outputPath + "/{0}x{1}_{2}.png", width, height, iter);
-    }
-
-
-    /* Apply Stuart's blur function to the images before saving them
-    private void BlurImage(Array[])
-    {
-
-    }
-    */
-
     //IEnumerator
-    private IEnumerator GenerateImages(GameObject Satellite, int width, int height, int itterations)
+    private IEnumerator GenerateImages(GameObject Satellite, int width, int height, int iterations)
     {
         // Grab the sun for transformations
 
         // Local for loop for now, want to distribute and parallelize eventually
-        for (int i = 0; i < itterations; i++)
+        for (int i = 0; i < iterations; i++)
         {
             // We should only read the screen buffer after rendering is complete
             // Neccessary for IEnumerator 
@@ -188,7 +177,7 @@ public class Generator : MonoBehaviour
                                                    Random.Range(0f, 360f)));
 
             // Focus the camera on the object
-            FocusObservatoryOnSatellite(Satellite, Random.Range(0.4f, 1.5f));
+            FocusObservatoryOnSatellite(Satellite, Random.Range(0.75f, 2f));
 
             // Focus the sun on the object
             _sunTransform.rotation = _camera.transform.rotation;
@@ -208,11 +197,10 @@ public class Generator : MonoBehaviour
 
             // Gets the correct size but unsure about location
             // Color[] img = ScreenShot.GetPixels(0, 0, resWidth, resHeight);
-            // data = BlurImage(img)
 
             // Save the screenshot to PNG in the corresponding satellite directory
             byte[] bytes = _screenshotTexture.EncodeToPNG();
-            string filename = ScreenShotName(width, height, i);
+            string filename = string.Format(outputPath + "/{0}x{1}_{2}.png", width, height, i);
             File.WriteAllBytes(filename, bytes);
             yield return null;
         }
