@@ -37,7 +37,7 @@ public class Generator : MonoBehaviour
         // Setup default arguments
         int resWidth = 224;
         int resHeight = 224;
-        int samples = 10;
+        int samples = 1000;
 
         // Get args type
         var argsType = args.GetType();

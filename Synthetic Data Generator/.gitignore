@@ -2,6 +2,7 @@
 /[Tt]emp/
 /[Bb]uild/
 /[Bb]uilds/
+/[Dd]ataset/
 Assets/AssetStoreTools*
 .vs/
 
